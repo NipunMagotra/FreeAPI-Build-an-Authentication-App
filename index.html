@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeAPI Auth App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-md">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">FreeAPI Auth</h1>
+        </div>
+
+        <!-- Messages -->
+        <div id="messages" class="mb-6"></div>
+
+        <!-- Auth Forms (Login/Register) -->
+        <div id="authSection" class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+            <div class="flex mb-6 border-b border-gray-200">
+                <button id="loginTab" class="flex-1 py-2 text-center font-medium text-gray-900 border-b-2 border-gray-900">Login</button>
+                <button id="registerTab" class="flex-1 py-2 text-center font-medium text-gray-500 hover:text-gray-900">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label for="loginUsername" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="loginUsername" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-900 focus:border-gray-900">
+                </div>
+                <div>
+                    <label for="loginPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="loginPassword" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-900 focus:border-gray-900">
+                </div>
+                <button type="submit" id="loginBtn" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                    Login
+                </button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="space-y-4 hidden">
+                <div>
+                    <label for="registerUsername" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="registerUsername" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-900 focus:border-gray-900">
+                </div>
+                <div>
+                    <label for="registerEmail" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="registerEmail" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-900 focus:border-gray-900">
+                </div>
+                <div>
+                    <label for="registerPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="registerPassword" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-900 focus:border-gray-900">
+                </div>
+                <div>
+                    <label for="registerRole" class="block text-sm font-medium text-gray-700">Role</label>
+                    <select id="registerRole" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-900 focus:border-gray-900">
+                        <option value="ADMIN">ADMIN</option>
+                        <option value="USER">USER</option>
+                    </select>
+                </div>
+                <button type="submit" id="registerBtn" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                    Register
+                </button>
+            </form>
+        </div>
+
+        <!-- User Profile Section -->
+        <div id="profileSection" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hidden">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Profile</h2>
+            <div id="profileContent" class="space-y-2 mb-6"></div>
+            <button id="logoutBtn" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
